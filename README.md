@@ -45,4 +45,4 @@ Proyek ini dilisensikan di bawah Lisensi MIT. Lihat berkas [LISENSI](LICENSE) un
 
 ---
 
-Terima kasih telah menggunakan System Information Academic CI. Jangan ragu untuk memberikan masukan atau pertanyaan melalui [issues](https://github.com/Putifinalian/System-Information-Academic-CI/issues).
+Terima kasih telah menggunakan System Information Academic CI. Jangan ragu untuk memberikan masukan atau pertanyaan melalui [issues](https://github.com/nama-username/System-Information-Academic-CI/issues).
