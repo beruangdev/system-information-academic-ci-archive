@@ -2,9 +2,7 @@
 
 namespace App\Enums;
 
-use Illuminate\Validation\Rules\Enum;
-
-final class StudentStatus extends Enum
+final class StudentStatus
 {
     const ACTIVE = "active";
     const INACTIVE = "inactive";

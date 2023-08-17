@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use Illuminate\Validation\Rules\Enum;
 
-final class LecturerStatus extends Enum
+final class LecturerStatus 
 {
     const ACTIVE = "active";
     const INACTIVE = "inactive";

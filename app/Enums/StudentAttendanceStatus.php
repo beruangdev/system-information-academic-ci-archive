@@ -2,9 +2,7 @@
 
 namespace App\Enums;
 
-use Illuminate\Validation\Rules\Enum;
-
-final class StudentAttendanceStatus extends Enum
+final class StudentAttendanceStatus 
 {
     const PRESENT = "present";
     const ABSENT = "absent";

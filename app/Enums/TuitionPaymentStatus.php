@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use Illuminate\Validation\Rules\Enum;
 
-final class TuitionPaymentStatus extends Enum
+final class TuitionPaymentStatus 
 {
     const PENDING = "pending";
     const PAID = "paid";

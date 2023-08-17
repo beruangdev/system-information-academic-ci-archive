@@ -2,9 +2,7 @@
 
 namespace App\Enums;
 
-use Illuminate\Validation\Rules\Enum;
-
-final class Gender extends Enum
+final class Gender
 {
     const MALE = "male";
     const FEMALE = "female";

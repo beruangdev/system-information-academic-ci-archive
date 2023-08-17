@@ -2,9 +2,7 @@
 
 namespace App\Enums;
 
-use Illuminate\Validation\Rules\Enum;
-
-final class UserRole extends Enum
+final class UserRole 
 {
     const ADMIN = "admin";
     const ACADEMIC_UNIVERSITY = "academic_university";

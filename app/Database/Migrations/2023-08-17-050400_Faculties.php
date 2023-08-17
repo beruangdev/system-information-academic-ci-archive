@@ -8,6 +8,7 @@ class Faculties extends Migration
 {
     public function up()
     {
+        // $this->forge->dropTable('faculties');
         $this->forge->addField([
             'id' => [
                 'type' => 'BIGINT',
@@ -22,12 +23,12 @@ class Faculties extends Migration
             ],
             'created_at' => [
                 'type' => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'null' => true,
                 'comment' => 'Waktu pembuatan record',
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'null' => true,
                 'on update' => 'CURRENT_TIMESTAMP',
                 'comment' => 'Waktu terakhir record diperbarui',
             ],
@@ -37,14 +38,13 @@ class Faculties extends Migration
                 'comment' => 'Waktu record dihapus (soft delete)',
             ],
         ]);
-    
+
         $this->forge->addKey('id', true);
         $this->forge->createTable('faculties');
     }
-    
+
     public function down()
     {
         $this->forge->dropTable('faculties');
     }
-    
 }

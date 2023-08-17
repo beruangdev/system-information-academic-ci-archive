@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scheme": "node .node/get-schema.js"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.1",
+    "mysql2": "^3.6.0",
     "postcss": "^8.4.28",
     "postcss-import": "^15.1.0",
     "sass": "^1.65.1",

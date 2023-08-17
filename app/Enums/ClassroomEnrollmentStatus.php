@@ -2,9 +2,8 @@
 
 namespace App\Enums;
 
-use Illuminate\Validation\Rules\Enum;
 
-final class ClassroomEnrollmentStatus extends Enum
+final class ClassroomEnrollmentStatus
 {
     const PENDING = "pending";
     const APPROVED = "approved";

@@ -38,12 +38,12 @@ class Classrooms extends Migration
             ],
             'created_at' => [
                 'type' => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'null' => true,
                 'comment' => 'Waktu pembuatan record',
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'null' => true,
                 'on update' => 'CURRENT_TIMESTAMP',
                 'comment' => 'Waktu terakhir record diperbarui',
             ],

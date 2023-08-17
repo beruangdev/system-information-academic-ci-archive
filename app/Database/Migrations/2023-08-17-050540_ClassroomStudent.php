@@ -25,14 +25,19 @@ class ClassroomStudent extends Migration
             ],
             'created_at' => [
                 'type' => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'null' => true,
                 'comment' => 'Waktu pembuatan record',
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
-                'default' => 'CURRENT_TIMESTAMP',
+                'null' => true,
                 'on update' => 'CURRENT_TIMESTAMP',
                 'comment' => 'Waktu terakhir record diperbarui',
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+                'comment' => 'Waktu record dihapus (soft delete)',
             ],
         ]);
 
