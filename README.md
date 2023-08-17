@@ -14,6 +14,22 @@ System Information Academic CI adalah proyek berbasis web yang dibangun dengan m
 - [ ] Manajemen Nilai dan Absensi Mahasiswa
 - [ ] Sistem Pembayaran SPP
 
+## User Roles
+
+The application has six user roles, each with different access and permissions:
+
+- **Admin**: Users with the admin role have full access to the entire system. They can manage student data, lecturer information, courses, classes, schedules, and more.
+
+- **Academic University**: Users with the academic university role can manage university-wide information, such as faculties and departments. They also have specific actions related to the university's academic affairs.
+
+- **Academic Faculty**: Users with the academic faculty role have the authority to manage faculty-specific information, including programs or majors within the faculty.
+
+- **Academic Major**: Users with the academic major role can manage information related to specific academic programs or majors.
+
+- **Lecturer**: Users with the lecturer role can manage their own information, including specializations, teaching schedules, and assigning grades to students.
+
+- **Student**: Users with the student role can access information about class schedules, grades, and other relevant academic detail.
+
 ## Instalasi
 
 1. Clone repositori ini ke dalam direktori proyek Anda:
