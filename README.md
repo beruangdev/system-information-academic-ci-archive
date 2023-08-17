@@ -2,6 +2,22 @@
 
 System Information Academic CI adalah proyek berbasis web yang dibangun dengan menggunakan framework CodeIgniter 4. Proyek ini bertujuan untuk mengelola informasi akademik di sebuah universitas, termasuk data mahasiswa, dosen, mata kuliah, kelas, jadwal, dan sebagainya.
 
+## Table of Contents
+- [Instalasi](#instalasi)
+- [User Roles](#user-roles)
+- [System Information Academic - Todo List](#system-information-academic---todo-list)
+  - [Setup](#setup)
+  - [Roles & Permissions](#roles--permissions)
+  - [Database](#database)
+  - [Models](#models)
+  - [Controllers](#controllers)
+  - [Views](#views)
+  - [Features](#features)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+- [Kontribusi](#kontribusi)
+- [Lisensi](#lisensi)
+
 ## Instalasi
 
 1. Clone repositori ini ke dalam direktori proyek Anda:
