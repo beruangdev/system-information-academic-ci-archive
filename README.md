@@ -4,14 +4,15 @@ System Information Academic CI adalah proyek berbasis web yang dibangun dengan m
 
 ## Fitur
 
-- Manajemen Data Mahasiswa
-- Manajemen Data Dosen
-- Manajemen Data Mata Kuliah
-- Manajemen Data Kelas
-- Manajemen Jadwal Kuliah
-- Sistem Pendaftaran Kelas
-- Manajemen Nilai dan Absensi Mahasiswa
-- Sistem Pembayaran SPP
+- [x] Buat project base
+- [ ] Manajemen Data Mahasiswa
+- [ ] Manajemen Data Dosen
+- [ ] Manajemen Data Mata Kuliah
+- [ ] Manajemen Data Kelas
+- [ ] Manajemen Jadwal Kuliah
+- [ ] Sistem Pendaftaran Kelas
+- [ ] Manajemen Nilai dan Absensi Mahasiswa
+- [ ] Sistem Pembayaran SPP
 
 ## Instalasi
 
