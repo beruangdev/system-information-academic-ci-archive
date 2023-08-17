@@ -1,0 +1,28 @@
+{
+  "_bootstrap.esm-7a4ecde0.js": {
+    "file": "assets/bootstrap.esm-7a4ecde0.js"
+  },
+  "app/Views/assets/js/admin.js": {
+    "file": "assets/admin-cfe596e0.js",
+    "imports": [
+      "_bootstrap.esm-7a4ecde0.js"
+    ],
+    "isEntry": true,
+    "src": "app/Views/assets/js/admin.js"
+  },
+  "app/Views/assets/js/main.css": {
+    "file": "assets/main-671f65eb.css",
+    "src": "app/Views/assets/js/main.css"
+  },
+  "app/Views/assets/js/main.js": {
+    "css": [
+      "assets/main-671f65eb.css"
+    ],
+    "file": "assets/main-0b98f1d6.js",
+    "imports": [
+      "_bootstrap.esm-7a4ecde0.js"
+    ],
+    "isEntry": true,
+    "src": "app/Views/assets/js/main.js"
+  }
+}
