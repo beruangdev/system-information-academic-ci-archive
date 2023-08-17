@@ -45,6 +45,24 @@ php spark serve
 
 ---
 
+## User Roles
+
+The application has six user roles, each with different access and permissions:
+
+- **Admin**: Users with the admin role have full access to the entire system. They can manage student data, lecturer information, courses, classes, schedules, and more.
+
+- **Academic University**: Users with the academic university role can manage university-wide information, such as faculties and departments. They also have specific actions related to the university's academic affairs.
+
+- **Academic Faculty**: Users with the academic faculty role have the authority to manage faculty-specific information, including programs or majors within the faculty.
+
+- **Academic Major**: Users with the academic major role can manage information related to specific academic programs or majors.
+
+- **Lecturer**: Users with the lecturer role can manage their own information, including specializations, teaching schedules, and assigning grades to students.
+
+- **Student**: Users with the student role can access information about class schedules, grades, and other relevant academic detail.
+
+---
+
 # System Information Academic - Todo List
 
 ## Setup
@@ -55,22 +73,46 @@ php spark serve
 
 ## Roles & Permissions
 
-- [ ] Implementasi sistem roles dan permissions.
-  - [ ] Buat tabel `roles` dan `permissions`.
-  - [ ] Tentukan permissions untuk setiap role:
-    - [ ] Admin
-    - [ ] Academic University
-    - [ ] Academic Faculty
-    - [ ] Academic Major
-    - [ ] Lecturer
-    - [ ] Student
+- [ ] Tentukan permissions untuk setiap role:
+  - [ ] Admin
+  - [ ] Academic University
+  - [ ] Academic Faculty
+  - [ ] Academic Major
+  - [ ] Lecturer
+  - [ ] Student
+
+## Database
+
+- [x] Buat rancangan database.
 
 ## Models
 
-- [ ] Buat model untuk setiap tabel, termasuk tabel `roles` dan `permissions`.
+- [x] Buat rancangan model.
+- [x] Buat model untuk setiap tabel:
+  - [x] AcademicAdvisorModel
+  - [x] AcademicModel
+  - [x] ClassroomEnrollmentModel
+  - [x] ClassroomLecturerModel
+  - [x] ClassroomSessionModel
+  - [x] ClassroomStudentModel
+  - [x] ClassroomModel
+  - [x] CoursePrerequisiteModel
+  - [x] CourseModel
+  - [x] FacultyModel
+  - [x] LecturerModel
+  - [x] MajorModel
+  - [x] RoomModel
+  - [x] SeasonModel
+  - [x] StudentAttendanceModel
+  - [x] StudentGradeModel
+  - [x] StudentSeasonLogModel
+  - [x] StudentModel
+  - [x] TuitionPaymentModel
+  - [x] UserModel
 
 ## Controllers
 
+- [ ] Buat rancangan controller.
 - [ ] Buat controller untuk setiap entitas utama dan tambahkan fitur berdasarkan role:
   - [ ] AdminController (full access)
   - [ ] AcademicUniversityController (hanya akses ke data universitas)
@@ -81,13 +123,14 @@ php spark serve
 
 ## Views
 
+- [ ] Buat rancangan view (Strategi view yang digunakan).
 - [ ] Buat views untuk setiap controller dengan mempertimbangkan hak akses role:
-  - [ ] Admin views
-  - [ ] Academic University views
-  - [ ] Academic Faculty views
-  - [ ] Academic Major views
-  - [ ] Lecturer views
-  - [ ] Student views
+  - [ ] Admin layout
+  - [ ] Academic University layout
+  - [ ] Academic Faculty layout
+  - [ ] Academic Major layout
+  - [ ] Lecturer layout
+  - [ ] Student layout
 
 ## Features
 
@@ -115,24 +158,6 @@ php spark serve
 - [ ] Setup environment produksi.
 - [ ] Deploy aplikasi ke server produksi.
 - [ ] Test aplikasi di lingkungan produksi.
-
----
-
-## User Roles
-
-The application has six user roles, each with different access and permissions:
-
-- **Admin**: Users with the admin role have full access to the entire system. They can manage student data, lecturer information, courses, classes, schedules, and more.
-
-- **Academic University**: Users with the academic university role can manage university-wide information, such as faculties and departments. They also have specific actions related to the university's academic affairs.
-
-- **Academic Faculty**: Users with the academic faculty role have the authority to manage faculty-specific information, including programs or majors within the faculty.
-
-- **Academic Major**: Users with the academic major role can manage information related to specific academic programs or majors.
-
-- **Lecturer**: Users with the lecturer role can manage their own information, including specializations, teaching schedules, and assigning grades to students.
-
-- **Student**: Users with the student role can access information about class schedules, grades, and other relevant academic detail.
 
 ---
 
