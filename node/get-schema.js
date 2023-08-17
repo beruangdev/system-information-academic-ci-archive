@@ -36,7 +36,6 @@ async function init() {
     const columns = await connection.query(
       `SHOW FULL COLUMNS FROM ${tableName}`
     );
-    // databaseStructure[tableName] = columns;
 
     let data = [];
 

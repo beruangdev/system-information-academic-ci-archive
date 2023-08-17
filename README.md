@@ -2,17 +2,121 @@
 
 System Information Academic CI adalah proyek berbasis web yang dibangun dengan menggunakan framework CodeIgniter 4. Proyek ini bertujuan untuk mengelola informasi akademik di sebuah universitas, termasuk data mahasiswa, dosen, mata kuliah, kelas, jadwal, dan sebagainya.
 
-## Fitur
+## Instalasi
 
-- [x] Buat project base
-- [ ] Manajemen Data Mahasiswa
-- [ ] Manajemen Data Dosen
-- [ ] Manajemen Data Mata Kuliah
-- [ ] Manajemen Data Kelas
-- [ ] Manajemen Jadwal Kuliah
-- [ ] Sistem Pendaftaran Kelas
-- [ ] Manajemen Nilai dan Absensi Mahasiswa
-- [ ] Sistem Pembayaran SPP
+1. Clone repositori ini ke dalam direktori proyek Anda:
+
+```bash
+ git clone https://github.com/Putifinalian/System-Information-Academic-CI.git
+```
+
+2. Pindah ke direktori proyek:
+
+```bash
+ cd System-Information-Academic-CI
+```
+
+3. Salin file `.env.example` menjadi `.env` dan atur konfigurasi database dan pengaturan lainnya.
+
+```bash
+ cp .env.example .env
+```
+
+4. Jalankan perintah berikut untuk menginstal dependensi:
+
+```bash
+ composer install
+ npm install
+```
+
+5. Jalankan migrasi database untuk membuat tabel-tabel yang diperlukan:
+
+```bash
+php spark migrate
+```
+
+6. Jalankan server lokal:
+
+```bash
+php spark serve
+```
+
+7. Akses aplikasi melalui browser dengan URL: http://localhost:8080
+
+---
+
+# System Information Academic - Todo List
+
+## Setup
+
+- [x] Install CodeIgniter 4.
+- [x] Setup database connection di `app/config/Database.php`.
+- [x] Aktifkan library yang diperlukan.
+
+## Roles & Permissions
+
+- [ ] Implementasi sistem roles dan permissions.
+  - [ ] Buat tabel `roles` dan `permissions`.
+  - [ ] Tentukan permissions untuk setiap role:
+    - [ ] Admin
+    - [ ] Academic University
+    - [ ] Academic Faculty
+    - [ ] Academic Major
+    - [ ] Lecturer
+    - [ ] Student
+
+## Models
+
+- [ ] Buat model untuk setiap tabel, termasuk tabel `roles` dan `permissions`.
+
+## Controllers
+
+- [ ] Buat controller untuk setiap entitas utama dan tambahkan fitur berdasarkan role:
+  - [ ] AdminController (full access)
+  - [ ] AcademicUniversityController (hanya akses ke data universitas)
+  - [ ] AcademicFacultyController (hanya akses ke data fakultas)
+  - [ ] AcademicMajorController (hanya akses ke data jurusan)
+  - [ ] LecturerController (hanya akses ke data dosen dan kelas yang diajar)
+  - [ ] StudentController (hanya akses ke data pribadi dan kelas yang diikuti)
+
+## Views
+
+- [ ] Buat views untuk setiap controller dengan mempertimbangkan hak akses role:
+  - [ ] Admin views
+  - [ ] Academic University views
+  - [ ] Academic Faculty views
+  - [ ] Academic Major views
+  - [ ] Lecturer views
+  - [ ] Student views
+
+## Features
+
+- [ ] Autentikasi user berdasarkan role.
+- [ ] Manajemen user (CRUD) oleh Admin.
+- [ ] Manajemen mahasiswa oleh Academic University, Academic Faculty, dan Academic Major.
+- [ ] Manajemen dosen oleh Academic University, Academic Faculty, dan Academic Major.
+- [ ] Manajemen kelas oleh Lecturer.
+- [ ] Manajemen mata kuliah oleh Academic University.
+- [ ] Manajemen fakultas oleh Academic University.
+- [ ] Manajemen jurusan oleh Academic Faculty.
+- [ ] Manajemen pembayaran SPP oleh Academic University dan Student.
+- [ ] Manajemen kehadiran mahasiswa oleh Lecturer.
+- [ ] Manajemen nilai mahasiswa oleh Lecturer.
+- [ ] Laporan dan statistik oleh Admin dan Academic roles.
+
+## Testing
+
+- [ ] Buat unit tests untuk setiap model.
+- [ ] Buat feature tests untuk setiap controller dengan mempertimbangkan hak akses role.
+
+## Deployment
+
+- [ ] Siapkan server produksi.
+- [ ] Setup environment produksi.
+- [ ] Deploy aplikasi ke server produksi.
+- [ ] Test aplikasi di lingkungan produksi.
+
+---
 
 ## User Roles
 
@@ -30,26 +134,7 @@ The application has six user roles, each with different access and permissions:
 
 - **Student**: Users with the student role can access information about class schedules, grades, and other relevant academic detail.
 
-## Instalasi
-
-1. Clone repositori ini ke dalam direktori proyek Anda:
-
-
-2. Pindah ke direktori proyek:
-
-
-3. Salin file `.env.example` menjadi `.env` dan atur konfigurasi database dan pengaturan lainnya.
-
-4. Jalankan perintah berikut untuk menginstal dependensi:
-
-
-5. Jalankan migrasi database untuk membuat tabel-tabel yang diperlukan:
-
-
-6. Jalankan server lokal:
-
-
-7. Akses aplikasi melalui browser dengan URL: http://localhost:8080
+---
 
 ## Kontribusi
 
