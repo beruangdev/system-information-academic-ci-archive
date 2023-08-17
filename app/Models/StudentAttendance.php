@@ -15,7 +15,8 @@ class StudentAttendance extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['classroom_session_id', 'student_id', 'status'];
+
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +41,16 @@ class StudentAttendance extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getClassroomSession()
+    {
+        $classroomSessionModel = new \App\Models\ClassroomSession();
+        return $classroomSessionModel->find($this->classroom_session_id);
+    }
+
+    public function getStudent()
+    {
+        $studentModel = new \App\Models\Student();
+        return $studentModel->find($this->student_id);
+    }
 }

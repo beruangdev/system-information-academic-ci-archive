@@ -15,7 +15,7 @@ class Faculty extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['name'];
 
     // Dates
     protected $useTimestamps = true;
@@ -41,13 +41,18 @@ class Faculty extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    public function getMajors()
+    {
+        $majorModel = new \App\Models\Major();
+        return $majorModel->where('faculty_id', $this->id)->findAll();
+    }
+
     public function getAcademics()
     {
-        $db = \Config\Database::connect();
-        return $db->table('academics')
-            ->where('academicable_type', 'faculty')
-            ->where('academicable_id', $this->id)
-            ->get()
-            ->getResult();
+        $academicModel = new \App\Models\Academic();
+        return $academicModel->where([
+            'academicable_type' => 'Faculty',
+            'academicable_id' => $this->id
+        ])->findAll();
     }
 }

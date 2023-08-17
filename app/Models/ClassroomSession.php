@@ -15,7 +15,8 @@ class ClassroomSession extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['start_datetime', 'end_datetime', 'attendance_code', 'topic', 'classroom_id', 'season_id', 'lecturer_id', 'room_id'];
+
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +41,34 @@ class ClassroomSession extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getClassroom()
+    {
+        $classroomModel = new \App\Models\Classroom();
+        return $classroomModel->find($this->classroom_id);
+    }
+
+    public function getSeason()
+    {
+        $seasonModel = new \App\Models\Season();
+        return $seasonModel->find($this->season_id);
+    }
+
+    public function getLecturer()
+    {
+        $lecturerModel = new \App\Models\Lecturer();
+        return $lecturerModel->find($this->lecturer_id);
+    }
+
+    public function getRoom()
+    {
+        $roomModel = new \App\Models\Room();
+        return $roomModel->find($this->room_id);
+    }
+
+    public function getStudentAttendances()
+    {
+        $studentAttendanceModel = new \App\Models\StudentAttendance();
+        return $studentAttendanceModel->where('classroom_session_id', $this->id)->findAll();
+    }
 }

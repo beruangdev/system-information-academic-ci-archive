@@ -15,7 +15,8 @@ class CoursePrerequisite extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['course_id', 'prerequisite_course_id'];
+
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +41,17 @@ class CoursePrerequisite extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    
+    public function getCourse()
+    {
+        $courseModel = new \App\Models\Course();
+        return $courseModel->find($this->course_id);
+    }
+
+    public function getPrerequisiteCourse()
+    {
+        $courseModel = new \App\Models\Course();
+        return $courseModel->find($this->prerequisite_course_id);
+    }
 }

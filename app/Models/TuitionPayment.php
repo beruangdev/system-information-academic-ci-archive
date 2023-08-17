@@ -15,7 +15,8 @@ class TuitionPayment extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['student_id', 'payment_date', 'amount', 'receipt_number', 'status', 'season_id'];
+
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +41,17 @@ class TuitionPayment extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    
+    public function getStudent()
+    {
+        $studentModel = new \App\Models\Student();
+        return $studentModel->find($this->student_id);
+    }
+
+    public function getSeason()
+    {
+        $seasonModel = new \App\Models\Season();
+        return $seasonModel->find($this->season_id);
+    }
 }

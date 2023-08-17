@@ -15,7 +15,8 @@ class StudentGrade extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['grade', 'student_id', 'course_id', 'classroom_id', 'season_id', 'user_id'];
+
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +41,34 @@ class StudentGrade extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getStudent()
+    {
+        $studentModel = new \App\Models\Student();
+        return $studentModel->find($this->student_id);
+    }
+
+    public function getCourse()
+    {
+        $courseModel = new \App\Models\Course();
+        return $courseModel->find($this->course_id);
+    }
+
+    public function getClassroom()
+    {
+        $classroomModel = new \App\Models\Classroom();
+        return $classroomModel->find($this->classroom_id);
+    }
+
+    public function getSeason()
+    {
+        $seasonModel = new \App\Models\Season();
+        return $seasonModel->find($this->season_id);
+    }
+
+    public function getUser()
+    {
+        $userModel = new \App\Models\User();
+        return $userModel->find($this->user_id);
+    }
 }

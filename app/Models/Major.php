@@ -15,7 +15,7 @@ class Major extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['name', 'faculty_id'];
 
     // Dates
     protected $useTimestamps = true;
@@ -41,13 +41,30 @@ class Major extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function academics()
+    public function getFaculty()
     {
-        $db = \Config\Database::connect();
-        return $db->table('academics')
-                  ->where('academicable_type', 'major')
-                  ->where('academicable_id', $this->id)
-                  ->get()
-                  ->getResult();
+        $facultyModel = new \App\Models\Faculty();
+        return $facultyModel->find($this->faculty_id);
+    }
+
+    public function getStudents()
+    {
+        $studentModel = new \App\Models\Student();
+        return $studentModel->where('major_id', $this->id)->findAll();
+    }
+
+    public function getCourses()
+    {
+        $courseModel = new \App\Models\Course();
+        return $courseModel->where('major_id', $this->id)->findAll();
+    }
+
+    public function getAcademics()
+    {
+        $academicModel = new \App\Models\Academic();
+        return $academicModel->where([
+            'academicable_type' => 'Major',
+            'academicable_id' => $this->id
+        ])->findAll();
     }
 }

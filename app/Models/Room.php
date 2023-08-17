@@ -15,7 +15,7 @@ class Room extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['name', 'capacity'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +40,10 @@ class Room extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getClassrooms()
+    {
+        $classroomModel = new \App\Models\Classroom();
+        return $classroomModel->where('room_id', $this->id)->findAll();
+    }
 }

@@ -15,7 +15,7 @@ class Classroom extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['name', 'capacity', 'credits', 'season_id', 'course_id'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +40,53 @@ class Classroom extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getSeason()
+    {
+        $seasonModel = new \App\Models\Season();
+        return $seasonModel->find($this->season_id);
+    }
+
+    public function getRoom()
+    {
+        $roomModel = new \App\Models\Room();
+        return $roomModel->find($this->room_id);
+    }
+
+    public function getCourse()
+    {
+        $courseModel = new \App\Models\Course();
+        return $courseModel->find($this->course_id);
+    }
+
+    public function getClassroomSessions()
+    {
+        $classroomSessionModel = new \App\Models\ClassroomSession();
+        return $classroomSessionModel->where('classroom_id', $this->id)->findAll();
+    }
+
+    public function getClassroomEnrollments()
+    {
+        $classroomEnrollmentModel = new \App\Models\ClassroomEnrollment();
+        return $classroomEnrollmentModel->where('classroom_id', $this->id)->findAll();
+    }
+
+    // Untuk relasi many-to-many, Anda perlu menyesuaikan logika berdasarkan tabel pivot Anda
+    public function getStudents()
+    {
+        $db = \Config\Database::connect();
+        return $db->table('classroom_enrollments')
+                  ->join('students', 'students.id = classroom_enrollments.student_id')
+                  ->where('classroom_id', $this->id)
+                  ->get()->getResult();
+    }
+
+    public function getLecturers()
+    {
+        $db = \Config\Database::connect();
+        return $db->table('classroom_lecturer')
+                  ->join('lecturers', 'lecturers.id = classroom_lecturer.lecturer_id')
+                  ->where('classroom_id', $this->id)
+                  ->get()->getResult();
+    }
 }

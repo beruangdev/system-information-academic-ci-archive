@@ -44,26 +44,25 @@ class Academic extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function academicable()
+    public function getUser()
     {
-        // $db = \Config\Database::connect();
-
-        switch ($this->academicable_type) {
-            case 'faculty':
-                $facultyModel = new Faculty();
-                return $facultyModel->find($this->academicable_id);
-
-            case 'major':
-                $majorModel = new Major();
-                return $majorModel->find($this->academicable_id);
-
-            default:
-                return null;
-        }
+        $userModel = new User(); // Asumsikan Anda memiliki model User di namespace App\Models
+        return $userModel->where('id', $this->user_id)->first();
     }
 
-    public function user()
+    public function getAcademicable()
     {
-        return $this->hasOne(UserModel::class, 'id', 'user_id');
+        if (!$this->academicable_type || !$this->academicable_id) {
+            return null;
+        }
+
+        $modelClass = '\\App\\Models\\' . $this->academicable_type; // Asumsikan semua model Anda berada di namespace App\Models
+
+        if (!class_exists($modelClass)) {
+            throw new \Exception("Model {$modelClass} tidak ditemukan.");
+        }
+
+        $modelInstance = new $modelClass();
+        return $modelInstance->find($this->academicable_id);
     }
 }

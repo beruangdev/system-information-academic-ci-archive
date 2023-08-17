@@ -15,7 +15,7 @@ class Season extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['name', 'start_date', 'end_date'];
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +40,41 @@ class Season extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
+    public function getClassrooms()
+    {
+        $classroomModel = new \App\Models\Classroom();
+        return $classroomModel->where('season_id', $this->id)->findAll();
+    }
+
+    public function getClassroomEnrollments()
+    {
+        $classroomEnrollmentModel = new \App\Models\ClassroomEnrollment();
+        return $classroomEnrollmentModel->where('season_id', $this->id)->findAll();
+    }
+
+    public function getClassroomSessions()
+    {
+        $classroomSessionModel = new \App\Models\ClassroomSession();
+        return $classroomSessionModel->where('season_id', $this->id)->findAll();
+    }
+
+    public function getStudentSeasonLogs()
+    {
+        $studentSeasonLogModel = new \App\Models\StudentSeasonLog();
+        return $studentSeasonLogModel->where('season_id', $this->id)->findAll();
+    }
+
+    public function getStudentGrades()
+    {
+        $studentGradeModel = new \App\Models\StudentGrade();
+        return $studentGradeModel->where('season_id', $this->id)->findAll();
+    }
+
+    public function getTuitionPayments()
+    {
+        $tuitionPaymentModel = new \App\Models\TuitionPayment();
+        return $tuitionPaymentModel->where('season_id', $this->id)->findAll();
+    }
 }

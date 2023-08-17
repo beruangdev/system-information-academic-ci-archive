@@ -15,7 +15,8 @@ class ClassroomEnrollment extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields = ['remarks', 'status', 'season_id', 'classroom_id', 'student_id'];
+
 
     // Dates
     protected $useTimestamps = true;
@@ -40,4 +41,22 @@ class ClassroomEnrollment extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getSeason()
+    {
+        $seasonModel = new \App\Models\Season();
+        return $seasonModel->find($this->season_id);
+    }
+
+    public function getClassroom()
+    {
+        $classroomModel = new \App\Models\Classroom();
+        return $classroomModel->find($this->classroom_id);
+    }
+
+    public function getStudent()
+    {
+        $studentModel = new \App\Models\Student();
+        return $studentModel->find($this->student_id);
+    }
 }
