@@ -1,6 +1,10 @@
 import { createConnection } from "mysql2/promise";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 await init();
 async function init() {
   const connection = await createConnection({
@@ -57,7 +61,7 @@ async function init() {
   }
 
   fs.writeFileSync(
-    path.join(process.cwd(), "node", ".scheme.json"),
+    path.join(__dirname, ".scheme.json"),
     JSON.stringify(databaseStructures, null, 2)
   );
   await connection.end();

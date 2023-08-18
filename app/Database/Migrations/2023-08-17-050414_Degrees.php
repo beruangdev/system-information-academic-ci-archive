@@ -4,10 +4,11 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Majors extends Migration
+class Degrees extends Migration
 {
     public function up()
     {
+        // $this->forge->dropTable('degrees');
         $this->forge->addField([
             'id' => [
                 'type' => 'BIGINT',
@@ -18,19 +19,7 @@ class Majors extends Migration
             'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-                'comment' => 'nama jurusan',
-            ],
-            'faculty_id' => [
-                'type' => 'BIGINT',
-                'constraint' => 20,
-                'unsigned' => true,
-                'comment' => 'menghubungkan jurusan dengan fakultas dimana 1 fakultas bisa terdapat 1 atau banyak jurusan',
-            ],
-            'degree_id' => [
-                'type' => 'BIGINT',
-                'constraint' => 20,
-                'unsigned' => true,
-                'comment' => 'menghubungkan jurusan dengan level strata dimana 1 level strata bisa terdapat 1 atau banyak jurusan',
+                'comment' => 'nama fakultas',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -49,18 +38,13 @@ class Majors extends Migration
                 'comment' => 'Waktu record dihapus (soft delete)',
             ],
         ]);
-    
-        $this->forge->addForeignKey('faculty_id', 'faculties', 'id', 'CASCADE', 'CASCADE');
-    
-        $this->forge->addForeignKey('degree_id', 'degrees', 'id', 'CASCADE', 'CASCADE');
 
         $this->forge->addKey('id', true);
-        $this->forge->createTable('majors');
+        $this->forge->createTable('degrees');
     }
-    
+
     public function down()
     {
-        $this->forge->dropTable('majors');
+        $this->forge->dropTable('degrees');
     }
-    
 }
