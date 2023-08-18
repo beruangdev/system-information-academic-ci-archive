@@ -115,6 +115,7 @@ The application has six user roles, each with different access and permissions:
   - [x] CoursePrerequisiteModel
   - [x] CourseModel
   - [x] FacultyModel
+  - [ ] DegreeModel
   - [x] LecturerModel
   - [x] MajorModel
   - [x] RoomModel
@@ -156,6 +157,7 @@ The application has six user roles, each with different access and permissions:
 - [ ] Manajemen dosen oleh Academic University, Academic Faculty, dan Academic Major.
 - [ ] Manajemen kelas oleh Lecturer.
 - [ ] Manajemen mata kuliah oleh Academic University.
+- [ ] Manajemen level strata (Degree) oleh Academic University.
 - [ ] Manajemen fakultas oleh Academic University.
 - [ ] Manajemen jurusan oleh Academic Faculty.
 - [ ] Manajemen pembayaran SPP oleh Academic University dan Student.
