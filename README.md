@@ -129,14 +129,28 @@ The application has six user roles, each with different access and permissions:
 
 ## Controllers
 
-- [ ] Buat rancangan controller.
-- [ ] Buat controller untuk setiap entitas utama dan tambahkan fitur berdasarkan role:
-  - [ ] AdminController (full access)
-  - [ ] AcademicUniversityController (hanya akses ke data universitas)
-  - [ ] AcademicFacultyController (hanya akses ke data fakultas)
-  - [ ] AcademicMajorController (hanya akses ke data jurusan)
-  - [ ] LecturerController (hanya akses ke data dosen dan kelas yang diajar)
-  - [ ] StudentController (hanya akses ke data pribadi dan kelas yang diikuti)
+- [ ] FacultyController: CRUD for Faculties
+- [ ] RoomController: CRUD for Rooms
+- [ ] DegreeController: CRUD for Degrees
+- [ ] MajorController: CRUD for Majors
+- [ ] SeasonController: CRUD for Seasons
+- [ ] AcademicController: CRUD for Academics
+- [ ] StudentController: CRUD for Students
+- [ ] CourseController: CRUD for Courses
+- [ ] LecturerController: CRUD for Lecturers
+- [ ] CoursePrerequisiteController: CRUD for Course Prerequisites
+- [ ] TuitionPaymentController: CRUD for Tuition Payments
+- [ ] StudentSeasonLogController: CRUD for Student Season Logs
+- [ ] ClassroomController: CRUD for Classrooms
+- [ ] ClassroomEnrollmentController: CRUD for Classroom Enrollments
+- [ ] ClassroomSessionController: CRUD for Classroom Sessions
+- [ ] StudentGradeController: CRUD for Student Grades
+- [ ] StudentAttendanceController: CRUD for Student Attendances
+- [ ] ClassroomLecturerController: CRUD for Classroom Lecturers
+- [ ] ClassroomStudentController: CRUD for Classroom Students
+- [ ] AcademicAdvisorController: CRUD for Academic Advisors
+
+
 
 ## Views
 
