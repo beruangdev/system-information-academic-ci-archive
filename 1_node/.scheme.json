@@ -69,208 +69,6 @@
     ]
   },
   {
-    "tableName": "auth_groups_users",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "user_id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "group",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "created_at",
-        "type": "datetime"
-      }
-    ]
-  },
-  {
-    "tableName": "auth_identities",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "user_id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "type",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "name",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "secret",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "secret2",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "expires",
-        "type": "datetime"
-      },
-      {
-        "name": "extra",
-        "type": "text"
-      },
-      {
-        "name": "force_reset",
-        "type": "tinyint(1)"
-      },
-      {
-        "name": "last_used_at",
-        "type": "datetime"
-      },
-      {
-        "name": "created_at",
-        "type": "datetime"
-      },
-      {
-        "name": "updated_at",
-        "type": "datetime"
-      }
-    ]
-  },
-  {
-    "tableName": "auth_logins",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "ip_address",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "user_agent",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "id_type",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "identifier",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "user_id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "date",
-        "type": "datetime"
-      },
-      {
-        "name": "success",
-        "type": "tinyint(1)"
-      }
-    ]
-  },
-  {
-    "tableName": "auth_permissions_users",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "user_id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "permission",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "created_at",
-        "type": "datetime"
-      }
-    ]
-  },
-  {
-    "tableName": "auth_remember_tokens",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "selector",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "hashedValidator",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "user_id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "expires",
-        "type": "datetime"
-      },
-      {
-        "name": "created_at",
-        "type": "datetime"
-      },
-      {
-        "name": "updated_at",
-        "type": "datetime"
-      }
-    ]
-  },
-  {
-    "tableName": "auth_token_logins",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "ip_address",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "user_agent",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "id_type",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "identifier",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "user_id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "date",
-        "type": "datetime"
-      },
-      {
-        "name": "success",
-        "type": "tinyint(1)"
-      }
-    ]
-  },
-  {
     "tableName": "classroom_enrollments",
     "columns": [
       {
@@ -569,6 +367,35 @@
     ]
   },
   {
+    "tableName": "degrees",
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint(20) unsigned"
+      },
+      {
+        "name": "name",
+        "type": "varchar(255)",
+        "comment": "nama fakultas"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "comment": "Waktu pembuatan record"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime",
+        "comment": "Waktu terakhir record diperbarui"
+      },
+      {
+        "name": "deleted_at",
+        "type": "datetime",
+        "comment": "Waktu record dihapus (soft delete)"
+      }
+    ]
+  },
+  {
     "tableName": "faculties",
     "columns": [
       {
@@ -664,6 +491,11 @@
         "comment": "menghubungkan jurusan dengan fakultas dimana 1 fakultas bisa terdapat 1 atau banyak jurusan"
       },
       {
+        "name": "degree_id",
+        "type": "bigint(20) unsigned",
+        "comment": "menghubungkan jurusan dengan level strata dimana 1 level strata bisa terdapat 1 atau banyak jurusan"
+      },
+      {
         "name": "created_at",
         "type": "datetime",
         "comment": "Waktu pembuatan record"
@@ -677,39 +509,6 @@
         "name": "deleted_at",
         "type": "datetime",
         "comment": "Waktu record dihapus (soft delete)"
-      }
-    ]
-  },
-  {
-    "tableName": "migrations",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "version",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "class",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "group",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "namespace",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "time",
-        "type": "int(11)"
-      },
-      {
-        "name": "batch",
-        "type": "int(11) unsigned"
       }
     ]
   },
@@ -786,43 +585,6 @@
         "name": "deleted_at",
         "type": "datetime",
         "comment": "Waktu record dihapus (soft delete)"
-      }
-    ]
-  },
-  {
-    "tableName": "settings",
-    "columns": [
-      {
-        "name": "id",
-        "type": "int(9)"
-      },
-      {
-        "name": "class",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "key",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "value",
-        "type": "text"
-      },
-      {
-        "name": "type",
-        "type": "varchar(31)"
-      },
-      {
-        "name": "context",
-        "type": "varchar(255)"
-      },
-      {
-        "name": "created_at",
-        "type": "datetime"
-      },
-      {
-        "name": "updated_at",
-        "type": "datetime"
       }
     ]
   },

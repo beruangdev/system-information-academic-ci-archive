@@ -57,7 +57,8 @@ class Academic extends Model
         }
 
         $modelClass = '\\App\\Models\\' . $this->academicable_type; // Asumsikan semua model Anda berada di namespace App\Models
-
+        // $modelClass = $this->academicable_type;
+        
         if (!class_exists($modelClass)) {
             throw new \Exception("Model {$modelClass} tidak ditemukan.");
         }

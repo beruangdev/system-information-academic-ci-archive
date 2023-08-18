@@ -29,18 +29,6 @@ class Courses extends Migration
                 'type' => 'INT',
                 'comment' => 'menyimpan nilai default jumlah kredit atau sks (sistem kredit semester) dari mata kuliah',
             ],
-            'major_id' => [
-                'type' => 'BIGINT',
-                'constraint' => 20,
-                'unsigned' => true,
-                'comment' => 'menyimpan foreign key untuk menghubungkan data mata kuliah dengan jurusan',
-            ],
-            'faculty_id' => [
-                'type' => 'BIGINT',
-                'constraint' => 20,
-                'unsigned' => true,
-                'comment' => 'menyimpan foreign key untuk menghubungkan data mata kuliah dengan fakultas',
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -60,8 +48,6 @@ class Courses extends Migration
         ]);
     
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('major_id', 'majors', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('faculty_id', 'faculties', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('courses');
     }
     
