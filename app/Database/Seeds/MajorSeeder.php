@@ -10,40 +10,71 @@ class MajorSeeder extends Seeder
   public function run()
   {
 
-    $majors_keguruan = [
-      // Program Profesi
-      ['name' => 'Pendidikan Profesi Guru', 'faculty_id' => 5, 'degree_id' => 5],
+    $majors_teknik = [
+      // Program Diploma (D3)
+      ['name' => 'Teknik Sipil', 'faculty_id' => 2, 'degree_id' => 1],
+      ['name' => 'Teknik Listrik', 'faculty_id' => 2, 'degree_id' => 1],
+      ['name' => 'Teknik Mesin', 'faculty_id' => 2, 'degree_id' => 1],
 
       // Program Sarjana (S1)
-      ['name' => 'Pendidikan Jasmani, Kesehatan, dan Rekreasi', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Ekonomi', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Guru Pendidikan Anak Usia Dini', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Sejarah', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Guru Sekolah Dasar', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Seni, Drama, Tari, dan Musik', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Bahasa Inggris', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Bahasa Indonesia', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Kewarganegaraan', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Fisika', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Kimia', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Biologi', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Kesejahteraan Keluarga', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Matematika', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Pendidikan Geografi', 'faculty_id' => 5, 'degree_id' => 2],
-      ['name' => 'Bimbingan dan Konseling', 'faculty_id' => 5, 'degree_id' => 2],
+      ['name' => 'Teknik Mesin', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Pertambangan', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Arsitektur', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Geologi', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Elektro', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Komputer', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Sipil', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Geofisika', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Perencanaan Wilayah dan Kota', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Kimia', 'faculty_id' => 2, 'degree_id' => 2],
+      ['name' => 'Teknik Industri', 'faculty_id' => 2, 'degree_id' => 2],
 
       // Program Master (S2)
-      ['name' => 'Pendidikan Olahraga', 'faculty_id' => 5, 'degree_id' => 3],
-      ['name' => 'Pendidikan Bahasa Indonesia', 'faculty_id' => 5, 'degree_id' => 3],
-      ['name' => 'Pendidikan Bahasa Inggris', 'faculty_id' => 5, 'degree_id' => 3],
-      ['name' => 'Pendidikan Biologi', 'faculty_id' => 5, 'degree_id' => 3],
+      ['name' => 'Magister Teknik Kimia', 'faculty_id' => 2, 'degree_id' => 3],
+      ['name' => 'Magister Teknik Elektro', 'faculty_id' => 2, 'degree_id' => 3],
+      ['name' => 'Magister Teknik Sipil', 'faculty_id' => 2, 'degree_id' => 3],
+      ['name' => 'Magister Teknik Industri', 'faculty_id' => 2, 'degree_id' => 3],
+      ['name' => 'Magister Teknik Mesin', 'faculty_id' => 2, 'degree_id' => 3],
+      ['name' => 'Magister Arsitektur', 'faculty_id' => 2, 'degree_id' => 3],
 
       // Program Doktoral (S3)
-      ['name' => 'Pendidikan IPS', 'faculty_id' => 5, 'degree_id' => 4],
+      ['name' => 'Doktor Ilmu Teknik', 'faculty_id' => 2, 'degree_id' => 4],
     ];
 
-    $faculty_id_pertanian = 6; // Sesuai dengan array yang Anda berikan sebelumnya
+    $faculty_id_keguruan = 5;
+    $majors_keguruan = [
+      // Program Profesi
+      ['name' => 'Pendidikan Profesi Guru', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 5],
 
+      // Program Sarjana (S1)
+      ['name' => 'Pendidikan Jasmani, Kesehatan, dan Rekreasi', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Ekonomi', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Guru Pendidikan Anak Usia Dini', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Sejarah', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Guru Sekolah Dasar', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Seni, Drama, Tari, dan Musik', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Bahasa Inggris', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Bahasa Indonesia', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Kewarganegaraan', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Fisika', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Kimia', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Biologi', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Kesejahteraan Keluarga', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Matematika', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Pendidikan Geografi', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+      ['name' => 'Bimbingan dan Konseling', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 2],
+
+      // Program Master (S2)
+      ['name' => 'Pendidikan Olahraga', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 3],
+      ['name' => 'Pendidikan Bahasa Indonesia', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 3],
+      ['name' => 'Pendidikan Bahasa Inggris', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 3],
+      ['name' => 'Pendidikan Biologi', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 3],
+
+      // Program Doktoral (S3)
+      ['name' => 'Pendidikan IPS', 'faculty_id' => $faculty_id_keguruan, 'degree_id' => 4],
+    ];
+
+    $faculty_id_pertanian = 6;
     $majors_pertanian = [
       // Program Diploma (D3)
       ['name' => 'Manajemen Agribisnis', 'faculty_id' => $faculty_id_pertanian, 'degree_id' => 1],
@@ -69,7 +100,7 @@ class MajorSeeder extends Seeder
       ['name' => 'Ilmu Pertanian', 'faculty_id' => $faculty_id_pertanian, 'degree_id' => 4],
     ];
 
-    $faculty_id_kedokteran = 7; // Sesuai dengan array yang Anda berikan sebelumnya
+    $faculty_id_kedokteran = 7;
     $majors_kedokteran = [
       // Program Profesi
       ['name' => 'Profesi Dokter', 'faculty_id' => $faculty_id_kedokteran, 'degree_id' => 5],
@@ -100,8 +131,7 @@ class MajorSeeder extends Seeder
       ['name' => 'Bedah Plastik dan Rekonstruksi', 'faculty_id' => $faculty_id_kedokteran, 'degree_id' => 6],
     ];
 
-    $faculty_id_mipa = 8; // Sesuai dengan array yang Anda berikan sebelumnya
-
+    $faculty_id_mipa = 8;
     $majors_mipa = [
       // Program Diploma (D3)
       ['name' => 'Teknik Elektronika', 'faculty_id' => $faculty_id_mipa, 'degree_id' => 1],
@@ -124,8 +154,7 @@ class MajorSeeder extends Seeder
       ['name' => 'Kecerdasan Buatan', 'faculty_id' => $faculty_id_mipa, 'degree_id' => 3],
     ];
 
-    $faculty_id_fisip = 9; // Sesuai dengan array yang Anda berikan sebelumnya
-
+    $faculty_id_fisip = 9;
     $majors_fisip = [
       // Program Sarjana (S1)
       ['name' => 'Ilmu Politik', 'faculty_id' => $faculty_id_fisip, 'degree_id' => 2],
@@ -134,7 +163,7 @@ class MajorSeeder extends Seeder
       ['name' => 'Sosiologi', 'faculty_id' => $faculty_id_fisip, 'degree_id' => 2],
     ];
 
-    $faculty_id_keperawatan = 10; // Sesuai dengan array yang Anda berikan sebelumnya
+    $faculty_id_keperawatan = 10;
     $majors_keperawatan = [
       // Program Profesi
       ['name' => 'Profesi Ners', 'faculty_id' => $faculty_id_keperawatan, 'degree_id' => 1],
@@ -179,34 +208,7 @@ class MajorSeeder extends Seeder
       ['name' => 'Doktor Ilmu Hukum', 'faculty_id' => 3, 'degree_id' => 4],
 
       // Fakultas Teknik
-      // Program Diploma (D3)
-      ['name' => 'Teknik Sipil', 'faculty_id' => 2, 'degree_id' => 1],
-      ['name' => 'Teknik Listrik', 'faculty_id' => 2, 'degree_id' => 1],
-      ['name' => 'Teknik Mesin', 'faculty_id' => 2, 'degree_id' => 1],
-
-      // Program Sarjana (S1)
-      ['name' => 'Teknik Mesin', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Pertambangan', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Arsitektur', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Geologi', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Elektro', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Komputer', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Sipil', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Geofisika', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Perencanaan Wilayah dan Kota', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Kimia', 'faculty_id' => 2, 'degree_id' => 2],
-      ['name' => 'Teknik Industri', 'faculty_id' => 2, 'degree_id' => 2],
-
-      // Program Master (S2)
-      ['name' => 'Magister Teknik Kimia', 'faculty_id' => 2, 'degree_id' => 3],
-      ['name' => 'Magister Teknik Elektro', 'faculty_id' => 2, 'degree_id' => 3],
-      ['name' => 'Magister Teknik Sipil', 'faculty_id' => 2, 'degree_id' => 3],
-      ['name' => 'Magister Teknik Industri', 'faculty_id' => 2, 'degree_id' => 3],
-      ['name' => 'Magister Teknik Mesin', 'faculty_id' => 2, 'degree_id' => 3],
-      ['name' => 'Magister Arsitektur', 'faculty_id' => 2, 'degree_id' => 3],
-
-      // Program Doktoral (S3)
-      ['name' => 'Doktor Ilmu Teknik', 'faculty_id' => 2, 'degree_id' => 4],
+      ...$majors_teknik,
 
       // Fakultas Keguruan dan Ilmu Pendidikan
       ...$majors_keguruan,
@@ -241,44 +243,4 @@ class MajorSeeder extends Seeder
 
     $this->db->table('majors')->insertBatch($majors);
   }
-
-  /*
-       "tableName": "majors",
-    "columns": [
-      {
-        "name": "id",
-        "type": "bigint(20) unsigned"
-      },
-      {
-        "name": "name",
-        "type": "varchar(255)",
-        "comment": "nama jurusan"
-      },
-      {
-        "name": "faculty_id",
-        "type": "bigint(20) unsigned",
-        "comment": "menghubungkan jurusan dengan fakultas dimana 1 fakultas bisa terdapat 1 atau banyak jurusan"
-      },
-      {
-        "name": "degree_id",
-        "type": "bigint(20) unsigned",
-        "comment": "menghubungkan jurusan dengan level strata dimana 1 level strata bisa terdapat 1 atau banyak jurusan"
-      },
-      {
-        "name": "created_at",
-        "type": "datetime",
-        "comment": "Waktu pembuatan record"
-      },
-      {
-        "name": "updated_at",
-        "type": "datetime",
-        "comment": "Waktu terakhir record diperbarui"
-      },
-      {
-        "name": "deleted_at",
-        "type": "datetime",
-        "comment": "Waktu record dihapus (soft delete)"
-      }
-    ]
-    */
 }
