@@ -318,6 +318,50 @@
     ]
   },
   {
+    "tableName": "course_requirements",
+    "columns": [
+      {
+        "name": "id",
+        "type": "bigint(20) unsigned"
+      },
+      {
+        "name": "course_id",
+        "type": "bigint(20) unsigned",
+        "comment": "Foreign key untuk menghubungkan dengan tabel courses"
+      },
+      {
+        "name": "faculty_id",
+        "type": "bigint(20) unsigned",
+        "comment": "Foreign key untuk menghubungkan dengan tabel faculties"
+      },
+      {
+        "name": "major_id",
+        "type": "bigint(20) unsigned",
+        "comment": "Foreign key untuk menghubungkan dengan tabel majors"
+      },
+      {
+        "name": "is_mandatory",
+        "type": "tinyint(1)",
+        "comment": "Menandakan apakah mata kuliah ini wajib atau pilihan"
+      },
+      {
+        "name": "created_at",
+        "type": "datetime",
+        "comment": "Waktu pembuatan record"
+      },
+      {
+        "name": "updated_at",
+        "type": "datetime",
+        "comment": "Waktu terakhir record diperbarui"
+      },
+      {
+        "name": "deleted_at",
+        "type": "datetime",
+        "comment": "Waktu record dihapus (soft delete)"
+      }
+    ]
+  },
+  {
     "tableName": "courses",
     "columns": [
       {
@@ -338,16 +382,6 @@
         "name": "credits",
         "type": "int(11)",
         "comment": "menyimpan nilai default jumlah kredit atau sks (sistem kredit semester) dari mata kuliah"
-      },
-      {
-        "name": "major_id",
-        "type": "bigint(20) unsigned",
-        "comment": "menyimpan foreign key untuk menghubungkan data mata kuliah dengan jurusan"
-      },
-      {
-        "name": "faculty_id",
-        "type": "bigint(20) unsigned",
-        "comment": "menyimpan foreign key untuk menghubungkan data mata kuliah dengan fakultas"
       },
       {
         "name": "created_at",

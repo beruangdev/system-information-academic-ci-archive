@@ -19,28 +19,66 @@ class CourseSeeder extends Seeder
         $this->faker = Factory::create("id_ID");
         $this->faculties = $this->db->table('faculties')->get()->getResultArray();
         $this->majors = $this->db->table('majors')->get()->getResultArray();
-        
 
-        // $this->db->disableForeignKeyChecks();
-        // $this->db->table("course_requirements")->truncate();
-        // $this->db->table("courses")->truncate();
-        // $this->db->enableForeignKeyChecks();
+
+        $this->db->disableForeignKeyChecks();
+        $this->db->table("course_requirements")->truncate();
+        $this->db->table("courses")->truncate();
+        $this->db->enableForeignKeyChecks();
 
         $this->courseUniversity();
         $this->courseFaculty(10);
         $this->courseMajor(10);
+        $this->coursePrerequisites();
     }
 
     public function coursePrerequisites()
     {
+        $prerequisites = [];
+
         $courses = $this->db->table('courses')->get()->getResultArray();
-        
-        
+
+        $universityCourses = $this->db->table('course_requirements')
+            ->where('faculty_id', null)
+            ->where('major_id', null)
+            ->where('is_mandatory', true)
+            ->get()
+            ->getResultArray();
+
+
+        $facultyCourses = $this->db->table('course_requirements')
+            ->where('faculty_id !=', null)
+            ->where('major_id', null)
+            ->where('is_mandatory', true)
+            ->get()
+            ->getResultArray();
+
+        $majorCourses = $this->db->table('course_requirements')
+            ->where('faculty_id',  null)
+            ->where('major_id !=', null)
+            ->where('is_mandatory', true)
+            ->get()
+            ->getResultArray();
+
+        foreach ($majorCourses as $key => $course_major) {
+            foreach ($universityCourses as $key => $universityCourse) {
+                $prerequisites[] = [
+                    'course_id' => $course_major['course_id'],
+                    'prerequisite_course_id' => $universityCourse['course_id'],
+                    'created_at' => Time::now(),
+                    'updated_at' => Time::now(),
+                ];
+            }
+        }
+
+
+        $this->insertChuck('course_prerequisites', $prerequisites);
     }
+
 
     public function courseMajor($number)
     {
-        
+
         $courses = [];
         $major_ids = [];
         foreach ($this->majors as $key => $major) {
